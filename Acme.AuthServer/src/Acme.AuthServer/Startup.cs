@@ -31,20 +31,7 @@ namespace Acme.AuthServer
 
             var scopes = Scopes.Get();
 
-            var users = new List<InMemoryUser>
-            {
-                new InMemoryUser
-                {
-                    Subject = "1234",
-                    Username = "patolino",
-                    Password = "P@ssw0rd",
-                    Claims = new List<Claim>
-                    {
-                        new Claim(JwtClaimTypes.Name, "Patolino"),
-                        new Claim(JwtClaimTypes.Email, "patolino@acme.com")
-                    }
-                }
-            };
+            var users = Users.Get();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
