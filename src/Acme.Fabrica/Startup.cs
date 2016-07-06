@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Acme.Loja
+namespace Acme.Fabrica
 {
     public class Startup
     {
@@ -66,8 +66,10 @@ namespace Acme.Loja
                 ClientSecret = "segredo-muito-secreto",
                 ResponseType = "code",
                 
+                Scope = { "openid", "profile" },
 
-                Scope = { "openid", "profile" }
+                SaveTokens = true
+
             });
 
             app.UseMvc(routes =>

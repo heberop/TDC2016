@@ -15,10 +15,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Acme.Loja": {
+    "Acme.Fabrica": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:2000",
+      "launchUrl": "http://localhost:4000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

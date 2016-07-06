@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 
-namespace Acme.Loja.Controllers
+namespace Acme.Fabrica.Controllers
 {
     public class HomeController : Controller
     {
@@ -11,9 +13,10 @@ namespace Acme.Loja.Controllers
         }
 
         [Authorize]
-        public IActionResult Restrito()
+        public async Task<IActionResult> Restrito()
         {
             ViewData["Message"] = "Você está em uma área restrita da FABRICA!!!";
+            ViewBag.AccessToken = await HttpContext.Authentication.GetTokenAsync("access_token");
 
             return View();
         }
