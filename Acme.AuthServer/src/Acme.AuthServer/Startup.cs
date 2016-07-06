@@ -1,5 +1,6 @@
 ﻿using Acme.AuthServer.Repo;
-using IdentityServer4.Services;
+using Acme.AuthServer.UI;
+using Acme.AuthServer.UI.Login;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,10 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using System;
-using System.Threading.Tasks;
-using IdentityServer4.Models;
-using IdentityServer4.Validation;
 
 namespace Acme.AuthServer
 {
@@ -34,41 +31,19 @@ namespace Acme.AuthServer
 
             var users = Users.Get();
 
-            //services.AddIdentityServer()
-            //        .SetSigningCredential(cert)
-            //        .AddInMemoryClients(clients)
-            //        .AddInMemoryScopes(scopes)
-            //        .AddInMemoryUsers(users);
-
             services.AddIdentityServer()
-                    .SetSigningCredential(cert);
+                    .SetSigningCredential(cert)
+                    .AddInMemoryClients(clients)
+                    .AddInMemoryScopes(scopes)
+                    .AddInMemoryUsers(users);
 
-            services.AddTransient<IProfileService, ProfileService>();
-            services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
-            services.AddTransient<IClientStore, ClientStore>();
-            services.AddTransient<IScopeStore, ScopeStore>();
+            services.AddMvc()
+                    .AddRazorOptions(razor =>
+                    {
+                        razor.ViewLocationExpanders.Add(new CustomViewLocationExpander());
+                    });
 
-        }
-        public class ResourceOwnerPasswordValidator : IResourceOwnerPasswordValidator
-        {
-            public Task<CustomGrantValidationResult> ValidateAsync(string userName, string password, ValidatedTokenRequest request)
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public class ProfileService : IProfileService
-        {
-            public Task GetProfileDataAsync(ProfileDataRequestContext context)
-            {
-                
-                throw new NotImplementedException();
-            }
-
-            public Task IsActiveAsync(IsActiveContext context)
-            {
-                throw new NotImplementedException();
-            }
+            services.AddTransient<LoginService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
