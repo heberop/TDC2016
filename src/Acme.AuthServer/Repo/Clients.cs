@@ -11,8 +11,8 @@ namespace Acme.AuthServer.Repo
             {
                 new Client
                 {
-                    ClientName = "ACME Fabrica",
-                    ClientId = "Acme.Fabrica",
+                    ClientName = "ACME Backoffice",
+                    ClientId = "Acme.Backoffice",
 
                     RedirectUris = new List<string>
                     {

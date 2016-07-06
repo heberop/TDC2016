@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.AuthServer", "src\Acme.AuthServer\Acme.AuthServer.xproj", "{649370D5-6DD5-4562-BAAD-C2D68586E90B}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.Backoffice", "src\Acme.Backoffice\Acme.Backoffice.xproj", "{5F053A7C-B402-441B-B3CB-25163D95F82C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{649370D5-6DD5-4562-BAAD-C2D68586E90B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{649370D5-6DD5-4562-BAAD-C2D68586E90B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{649370D5-6DD5-4562-BAAD-C2D68586E90B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F053A7C-B402-441B-B3CB-25163D95F82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F053A7C-B402-441B-B3CB-25163D95F82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F053A7C-B402-441B-B3CB-25163D95F82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F053A7C-B402-441B-B3CB-25163D95F82C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{649370D5-6DD5-4562-BAAD-C2D68586E90B} = {2798ABFE-EF7F-4D8D-AEA4-32FF77F8C856}
+		{5F053A7C-B402-441B-B3CB-25163D95F82C} = {2798ABFE-EF7F-4D8D-AEA4-32FF77F8C856}
 	EndGlobalSection
 EndGlobal
