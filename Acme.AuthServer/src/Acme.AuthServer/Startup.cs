@@ -1,4 +1,5 @@
-﻿using IdentityServer4.Models;
+﻿using Acme.AuthServer.Repo;
+using IdentityServer4.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -24,48 +25,8 @@ namespace Acme.AuthServer
             //DÊ SEMPRE PREFERÊNCIA POR UM CERTIFICADO REGISTRADO NA MAQUINA
             var cert = new X509Certificate2(Path.Combine(_environment.ContentRootPath, "idsrv3test.pfx"), "idsrv3test");
 
-            var clients = new List<Client>
-            {
-                new Client
-                {
-                    ClientName = "ACME Fabrica",
-                    ClientId = "Acme.Fabrica",
-
-                    RedirectUris = new List<string>
-                    {
-                        "http://localhost:2000"
-                    },
-
-                    AllowedGrantTypes = GrantTypes.Implicit,
-
-                    AllowedScopes = new List<string>
-                    {
-                        StandardScopes.OpenId.Name,
-                        StandardScopes.Profile.Name
-                    }
-                },
-
-                new Client
-                {
-                    ClientName = "ACME Loja",
-                    ClientId = "Acme.Loja",
-
-                    RedirectUris = new List<string>
-                    {
-                        "http://localhost:3000"
-                    },
-
-                    AllowedGrantTypes = GrantTypes.Implicit,
-
-                    AllowedScopes = new List<string>
-                    {
-                        StandardScopes.OpenId.Name,
-                        StandardScopes.Profile.Name
-                    }
-                },
-
-            };
-
+            var clients = Clients.Get();
+            
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
