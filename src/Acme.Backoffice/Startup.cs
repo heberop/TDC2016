@@ -49,6 +49,13 @@ namespace Acme.Backoffice
 
             app.UseStaticFiles();
 
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "cookies",
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true
+            });
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
