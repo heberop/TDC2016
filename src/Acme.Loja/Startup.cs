@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Acme.Backoffice
+namespace Acme.Loja
 {
     public class Startup
     {
@@ -62,10 +62,9 @@ namespace Acme.Backoffice
                 RequireHttpsMetadata = false,
 
                 Authority = "http://localhost:1000",
-                ClientId = "Acme.Backoffice",
+                ClientId = "Acme.Loja",
                 ResponseType = "id_token token",
                 
-                SaveTokens = true,
 
                 Scope = { "openid", "profile" }
             });

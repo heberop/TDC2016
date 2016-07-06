@@ -40,6 +40,7 @@ namespace Acme.AuthServer.Repo
                     },
 
                     AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
 
                     AllowedScopes = new List<string>
                     {
