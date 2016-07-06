@@ -10,7 +10,15 @@ namespace Acme.AuthServer.Repo
             return new List<Scope>
             {
                 StandardScopes.OpenId,
-                StandardScopes.Profile
+                StandardScopes.Profile,
+                
+                new Scope
+                {
+                    Name = "ApiProdutos",
+                    DisplayName = "API de Produtos",
+                    Description = "Manipulação de produtos via API",
+                    Type = ScopeType.Resource
+                }
             };
         }
     }

@@ -66,7 +66,7 @@ namespace Acme.Fabrica
                 ClientSecret = "segredo-muito-secreto",
                 ResponseType = "code",
                 
-                Scope = { "openid", "profile" },
+                Scope = { "openid", "profile", "ApiProdutos" },
 
                 SaveTokens = true
 

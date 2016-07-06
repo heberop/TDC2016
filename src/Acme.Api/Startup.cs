@@ -44,7 +44,7 @@ namespace Acme.Api
                 RequireHttpsMetadata = false,
                 ScopeName = "ApiProdutos",
                 AutomaticAuthenticate = true,
-                AutomaticChallenge = true,
+                AutomaticChallenge = true
             });
 
             app.UseMvc();
