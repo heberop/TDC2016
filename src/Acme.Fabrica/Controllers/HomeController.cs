@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Acme.Fabrica.Controllers
 {
@@ -34,9 +35,9 @@ namespace Acme.Fabrica.Controllers
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var response = await client.GetStringAsync("http://localhost:5000/api/produtos");
-            ViewBag.Produtos = JsonConvert.DeserializeObject<IEnumerable<string>>(response);
+            var produtos = JsonConvert.DeserializeObject<IEnumerable<Produto>>(response);
 
-            return View();
+            return View(produtos);
         }
 
         public IActionResult Error()
@@ -44,4 +45,5 @@ namespace Acme.Fabrica.Controllers
             return View();
         }
     }
+
 }

@@ -60,7 +60,8 @@ namespace Acme.AuthServer.Repo
 
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:4000/signin-oidc"
+                        "http://localhost:4000/signin-oidc",
+                        "https://www.getpostman.com/oauth2/callback"
                     },
 
                     AllowedGrantTypes = GrantTypes.Code,
