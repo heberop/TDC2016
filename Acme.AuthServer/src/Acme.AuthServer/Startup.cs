@@ -27,11 +27,9 @@ namespace Acme.AuthServer
 
             var clients = Clients.Get();
 
-            var scopes = new List<Scope>
-            {
-                StandardScopes.OpenId,
-                StandardScopes.Profile
-            };
+            var scopes = Scopes.Get();
+
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
