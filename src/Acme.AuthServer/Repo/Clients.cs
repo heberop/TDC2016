@@ -16,10 +16,11 @@ namespace Acme.AuthServer.Repo
 
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:2000"
+                        "http://localhost:2000/signin-oidc"
                     },
 
                     AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
 
                     AllowedScopes = new List<string>
                     {
@@ -35,7 +36,7 @@ namespace Acme.AuthServer.Repo
 
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:3000"
+                        "http://localhost:3000/signin-oidc"
                     },
 
                     AllowedGrantTypes = GrantTypes.Implicit,
