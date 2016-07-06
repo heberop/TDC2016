@@ -26,7 +26,12 @@ namespace Acme.AuthServer
             var cert = new X509Certificate2(Path.Combine(_environment.ContentRootPath, "idsrv3test.pfx"), "idsrv3test");
 
             var clients = Clients.Get();
-            
+
+            var scopes = new List<Scope>
+            {
+                StandardScopes.OpenId,
+                StandardScopes.Profile
+            };
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
