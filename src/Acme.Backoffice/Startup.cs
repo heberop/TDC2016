@@ -52,8 +52,21 @@ namespace Acme.Backoffice
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationScheme = "cookies",
-                AutomaticAuthenticate = true,
-                AutomaticChallenge = true
+                AutomaticAuthenticate = true
+            });
+
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                AuthenticationScheme = "oidc",
+                SignInScheme = "cookies",
+                RequireHttpsMetadata = false,
+
+                Authority = "http://localhost:1000",
+                ClientId = "Acme.Backoffice",
+                ResponseType = "id_token token",
+                
+
+                Scope = { "openid", "profile" }
             });
 
             app.UseMvc(routes =>
