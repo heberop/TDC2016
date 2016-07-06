@@ -1,5 +1,6 @@
 ﻿using Acme.AuthServer.Repo;
-using IdentityServer4.Models;
+using IdentityModel;
+using IdentityServer4.Services.InMemory;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Acme.AuthServer
@@ -29,7 +31,20 @@ namespace Acme.AuthServer
 
             var scopes = Scopes.Get();
 
-
+            var users = new List<InMemoryUser>
+            {
+                new InMemoryUser
+                {
+                    Subject = "1234",
+                    Username = "patolino",
+                    Password = "P@ssw0rd",
+                    Claims = new List<Claim>
+                    {
+                        new Claim(JwtClaimTypes.Name, "Patolino"),
+                        new Claim(JwtClaimTypes.Email, "patolino@acme.com")
+                    }
+                }
+            };
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
