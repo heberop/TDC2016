@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Acme.Backoffice.Controllers
+namespace Acme.Loja.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +13,7 @@ namespace Acme.Backoffice.Controllers
         [Authorize]
         public IActionResult Restrito()
         {
-            ViewData["Message"] = "Você está em uma área restrita do BACKOFFICE!!!";
+            ViewData["Message"] = "Você está em uma área restrita da FABRICA!!!";
 
             return View();
         }

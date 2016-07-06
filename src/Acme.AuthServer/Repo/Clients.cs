@@ -48,6 +48,30 @@ namespace Acme.AuthServer.Repo
                         StandardScopes.Profile.Name
                     }
                 },
+
+                new Client
+                {
+                    ClientName = "ACME Fabrica",
+                    ClientId = "Acme.Fabrica",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("segredo-muito-secreto".Sha256())
+                    },
+
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:4000/signin-oidc"
+                    },
+
+                    AllowedGrantTypes = GrantTypes.Code,
+
+                    AllowedScopes = new List<string>
+                    {
+                        StandardScopes.OpenId.Name,
+                        StandardScopes.Profile.Name
+                    }
+                },
+
             };
         }
     }

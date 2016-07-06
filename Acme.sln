@@ -16,6 +16,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.Backoffice", "src\Acme
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.Loja", "src\Acme.Loja\Acme.Loja.xproj", "{6037718C-AC34-4BB4-84FD-6BFAB1636F74}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Acme.Fabrica", "src\Acme.Fabrica\Acme.Fabrica.xproj", "{6643E0C4-A4FE-40A2-B850-31497D69E299}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{6037718C-AC34-4BB4-84FD-6BFAB1636F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6037718C-AC34-4BB4-84FD-6BFAB1636F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6037718C-AC34-4BB4-84FD-6BFAB1636F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6643E0C4-A4FE-40A2-B850-31497D69E299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6643E0C4-A4FE-40A2-B850-31497D69E299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6643E0C4-A4FE-40A2-B850-31497D69E299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6643E0C4-A4FE-40A2-B850-31497D69E299}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +48,6 @@ Global
 		{649370D5-6DD5-4562-BAAD-C2D68586E90B} = {2798ABFE-EF7F-4D8D-AEA4-32FF77F8C856}
 		{5F053A7C-B402-441B-B3CB-25163D95F82C} = {2798ABFE-EF7F-4D8D-AEA4-32FF77F8C856}
 		{6037718C-AC34-4BB4-84FD-6BFAB1636F74} = {2798ABFE-EF7F-4D8D-AEA4-32FF77F8C856}
+		{6643E0C4-A4FE-40A2-B850-31497D69E299} = {2798ABFE-EF7F-4D8D-AEA4-32FF77F8C856}
 	EndGlobalSection
 EndGlobal
